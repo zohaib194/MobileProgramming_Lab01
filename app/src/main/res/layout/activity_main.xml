@@ -51,6 +51,7 @@
        android:layout_width="320dp"
        android:layout_height="21dp"
        android:layout_marginTop="16dp"
+        android:entries="@array/items"
        app:layout_constraintTop_toBottomOf="@+id/S1"
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
