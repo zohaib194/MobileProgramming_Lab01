@@ -22,13 +22,14 @@ public class A2 extends AppCompatActivity {
         Button button = findViewById(R.id.B2);
         button.setOnClickListener(this::onClick);
     }
-
+    // Goes to A3 when button is clicked
     public void onClick(View view){
         Intent intent = new Intent(getApplicationContext(), A3.class);
         startActivityForResult(intent, GET_RESULT);
     }
 
 @Override
+    // set the text from A3 to A2
     protected void onActivityResult(int req, int res, Intent data){
         if(GET_RESULT == req){
             if(res == RESULT_OK){

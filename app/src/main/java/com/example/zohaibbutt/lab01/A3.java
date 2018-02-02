@@ -16,9 +16,7 @@ public class A3 extends AppCompatActivity {
         Button button = findViewById(R.id.B3);
         button.setOnClickListener(this::onClick);
     }
-
-
-
+    
     public void onClick(View view){
         Intent intent = new Intent();
         EditText content = findViewById(R.id.T4);

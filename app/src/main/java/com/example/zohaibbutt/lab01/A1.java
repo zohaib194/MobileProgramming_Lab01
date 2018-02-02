@@ -54,18 +54,16 @@ public class A1 extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Save the position of item selected in spinner
     public void saveKeyValue(){
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(SPINNER_VAL, ((Spinner)findViewById(R.id.L1)).getSelectedItemPosition()); //(String)((Spinner)findViewById(R.id.L1)).getSelectedItem());
-        Log.i(SPINNER_VAL, String.valueOf(((Spinner)findViewById(R.id.L1)).getSelectedItemPosition())+"Hellooo");
-
+        editor.putInt(SPINNER_VAL, ((Spinner)findViewById(R.id.L1)).getSelectedItemPosition());
         editor.commit();
     }
-
+    //overwritting the onStop() so the position of selected item is saved in shared pref.
     public void onStop(){
         saveKeyValue();
         super.onStop();
-
     }
 }
