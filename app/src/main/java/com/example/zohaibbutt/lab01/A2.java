@@ -31,12 +31,14 @@ public class A2 extends AppCompatActivity {
 @Override
     // set the text from A3 to A2
     protected void onActivityResult(int req, int res, Intent data){
-        if(GET_RESULT == req){
-            if(res == RESULT_OK){
-                String txt = data.getStringExtra("result");
-                TextView t3Txt = findViewById(R.id.T3);
-                t3Txt.setText(txt);
-            }
+        if(req != GET_RESULT) {
+            return;
         }
+        if(res != RESULT_OK) {
+            return;
+        }
+        String txt = data.getStringExtra("result");
+        TextView t3Txt = findViewById(R.id.T3);
+        t3Txt.setText("From A3: " + txt);
     }
 }

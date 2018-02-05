@@ -30,7 +30,7 @@ public class A1 extends AppCompatActivity {
         Button button = findViewById(R.id.B1);
 
         //Shared pref
-        sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        this.sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
         // create an adapter and set default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -63,7 +63,7 @@ public class A1 extends AppCompatActivity {
     }
     //overwritting the onStop() so the position of selected item is saved in shared pref.
     public void onStop(){
-        saveKeyValue();
         super.onStop();
+        saveKeyValue();
     }
 }
